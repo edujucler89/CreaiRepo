@@ -8,20 +8,17 @@ test.beforeEach(async ({ page }) => {
             throw new Error(msg.text());
         }
     });
-    //Allow cookies (site-wide banner)
-    await page.addLocatorHandler(page.getByText('This website uses cookies'), async () => {
-        await page.getByText('Allow All').click();
-        }
-    );
 });
 
 test('has title', async ({ page },testinfo) => {
     const creaiHomePage = new CreaiPage(page);
 
     //runs in chrome browser and safari iphone12
-    await test.step('Verify that pages loads successfully',async()=>{
+    await test.step('Verify that pages loads successfully and close cookie banner',async()=>{
         const response = await creaiHomePage.navigatetosite();
         expect(response?.status()).toBe(200);
+        //Close Cookie banner
+        await creaiHomePage.closeCookieBanner();
     });
 
     //runs in chrome browser and safari iphone12

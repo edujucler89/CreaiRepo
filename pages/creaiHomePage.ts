@@ -20,6 +20,13 @@ export class CreaiPage{
         return await this.page.goto('');
     }
 
+    async closeCookieBanner(){
+        const cookieBanner = this.page.getByText('This website uses cookies');
+        await cookieBanner.waitFor({ state: 'visible' });
+        await this.page.getByText('Allow All').click();
+        await cookieBanner.waitFor({ state: 'hidden' });
+    }
+
     async goToSuccessStories(){
         await this.page.locator('.navbar11_container').getByRole('link',{name:'Success stories'}).last().click();
     }
