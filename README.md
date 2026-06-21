@@ -1,4 +1,4 @@
-  # Run Test onf you local machine (OPTION A)
+  # Run Test on you local machine (OPTION A)
 
   ## Prerequisites
   -Node Js
@@ -37,18 +37,20 @@
   - pages/creaiHomePage.ts — home page Page Object (locators and actions).
   - playwright.config.ts — configuration
 
-  ## View results from GitHub Actions (OPTION B)
+  # View results from GitHub Actions (OPTION B)
 
   Each workflow run uploads the HTML report (including test videos) as a downloadable artifact. To view it:
 
   1. Go to the **Actions** tab of the repository.
   2. Click the workflow run you want to inspect.
   3. Scroll down to the **Artifacts** section at the bottom of the run summary.
-  4. Download the **`playwright-report`** artifact (a `.zip` file).
-  5. Unzip it. You'll get a `playwright-report/` folder.
-  6. Open the report:
+  4. Download the **`playwright-report`** artifact (a `.zip` file). It usually lands in your `Downloads` folder.
+  5. Unzip it. You'll get a `playwright-report/` folder inside `Downloads`.
+  6. Open the report by double-clicking `playwright-report/index.html` to open it in your browser. The report is self-contained, so the results and videos load fine.
+
+     Alternatively, you can open it from the terminal (passing the absolute path, works from any directory):
      ```bash
-     npx playwright show-report playwright-report
-     (or open playwright-report/index.html directly in your browser).
-  7. In the report, click a test to see its details. The video of the run is embedded there; the raw video files also live inside
-  playwright-report/data/ as .webm.
+     npx playwright show-report ~/Downloads/playwright-report
+     ```
+     This starts a local server and opens the report in your browser. Press `Ctrl+C` in the terminal to stop it when you're done.
+  7. In the report, click a test to see its details. The video of the run is embedded there; the raw video files also live inside `playwright-report/data/` as `.webm`.
