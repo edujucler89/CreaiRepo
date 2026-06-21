@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
     });
 });
 
-test('has title', async ({ page },testinfo) => {
+test('Creai Technical Test', async ({ page },testinfo) => {
     const creaiHomePage = new CreaiPage(page);
 
     //runs in chrome browser and safari iphone12
