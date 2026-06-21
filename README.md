@@ -1,4 +1,4 @@
-  # CreaiRepo — E2E Tests with Playwright
+  # Run Test onf you local machine (OPTION A)
 
   ## Prerequisites
   -Node Js
@@ -36,3 +36,19 @@
   - tests/creaiTest.spec.ts — the test.
   - pages/creaiHomePage.ts — home page Page Object (locators and actions).
   - playwright.config.ts — configuration
+
+  ## View results from GitHub Actions (OPTION B)
+
+  Each workflow run uploads the HTML report (including test videos) as a downloadable artifact. To view it:
+
+  1. Go to the **Actions** tab of the repository.
+  2. Click the workflow run you want to inspect.
+  3. Scroll down to the **Artifacts** section at the bottom of the run summary.
+  4. Download the **`playwright-report`** artifact (a `.zip` file).
+  5. Unzip it. You'll get a `playwright-report/` folder.
+  6. Open the report:
+     ```bash
+     npx playwright show-report playwright-report
+     (or open playwright-report/index.html directly in your browser).
+  7. In the report, click a test to see its details. The video of the run is embedded there; the raw video files also live inside
+  playwright-report/data/ as .webm.
