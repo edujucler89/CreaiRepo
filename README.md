@@ -2,12 +2,9 @@
 
   ## Prerequisites
   -Node Js
+  -git
   
-  Verify you have them:
-  node -v
-  npm -v
-
-  Installation
+  ## Installation
 
   1. Clone the repository:
   git clone https://github.com/edujucler89/CreaiRepo.git
@@ -18,7 +15,7 @@
   4. Install the browsers Playwright uses (required step if not playwright browser installed previously):
   npx playwright install
 
-  Running the tests
+  ## Running the tests
 
   The test runs on two configurations: chromium (desktop) and Mobile Safari (iPhone 12).
 
@@ -29,12 +26,12 @@
   - Run on mobile only (iPhone 12 / Safari):
   npx playwright test creaiTest --project="Mobile Safari"
 
-  Viewing the report
+  ## Viewing the report
 
   After the run, an HTML report is generated. To open it:
   npx playwright show-report
 
-  Project structure
+  ## Project structure
 
   - tests/creaiTest.spec.ts — the test.
   - pages/creaiHomePage.ts — home page Page Object (locators and actions).
