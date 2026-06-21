@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main, master ]
   schedule:
-      - cron: '0 6 * * *'   # every day 00:00:00 mexico time gmt-6
+    - cron: '0 6,18 * * *'   # each 12h: 00:00 y 12:00 Mexico central
   workflow_dispatch:
 jobs:
   test:
