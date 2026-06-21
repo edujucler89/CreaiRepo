@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main, master ]
   schedule:
-      - cron: '*/10 * * * *'   # cada 10 min
+      - cron: '0 6 * * *'   # every day 00:00:00 mexico time gmt-6
   workflow_dispatch:
 jobs:
   test:
@@ -21,7 +21,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test --workers=2
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
